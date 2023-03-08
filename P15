@@ -1,0 +1,61 @@
+package chap01; //패키지 이름 바꿔주기
+
+import java.util.Scanner;
+
+public class Practice { //클래스 이름 바꿔주기
+
+	public static void main(String[] args) {
+//		String[] names = new String[];
+		Scanner sc = new Scanner(System.in);
+		String equation = sc.next();
+		int indexNum = 0;
+		
+
+		if (equation.contains("+")) {
+			indexNum = equation.indexOf("+");
+			System.out.println(" + 포함, 위치는 index " + indexNum);
+		} else if (equation.contains("-")) {
+			indexNum = equation.indexOf("-");
+			System.out.println(" - 포함, 위치는 index " + indexNum);
+		} else if (equation.contains("*")) {
+			indexNum = equation.indexOf("*");
+			System.out.println(" * 포함, 위치는 index " + indexNum);
+		} else if (equation.contains("/")) {
+			indexNum = equation.indexOf("/");
+			System.out.println(" / 포함, 위치는 index " + indexNum);
+		}
+
+		String cuttedInput1 = equation.substring(0, indexNum);
+		String cuttedInput2 = equation.substring(indexNum + 1);
+		System.out.println(cuttedInput1);
+		System.out.println(cuttedInput2);
+
+		double first = Double.valueOf(cuttedInput1);
+		double second = Double.valueOf(cuttedInput2);
+		double doubleResult;
+		
+		if (equation.contains("+")) {
+			doubleResult = first + second;
+			printResult(doubleResult);
+		} else if (equation.contains("-")) {
+			doubleResult = first - second;
+			printResult(doubleResult);
+		} else if (equation.contains("*")) {
+			doubleResult = first * second;
+			printResult(doubleResult);
+		} else if (equation.contains("/")) {
+			doubleResult = first / second;
+			printResult(doubleResult);
+		}
+	}
+
+	private static void printResult(double result) {
+		int intResult;
+		if(result == (int) result) {
+			intResult = (int) result;
+			System.out.println(intResult);
+		} else {
+			System.out.println(result);
+		}
+	}
+}
