@@ -1,0 +1,36 @@
+package chap01; // 패키지 이름 바꾸기
+
+import java.util.Scanner;
+
+public class Chap01 { // 클래스 이름 바꾸기
+
+	public static void main(String[] args) {
+//		String[] names = new String[];
+		Scanner sc = new Scanner(System.in);
+		int P = 0, N = 0, O = 0, E = 0;
+		int input;
+		
+		while(true) {
+			input = sc.nextInt();
+			if(input > 0) {
+				P++;
+				if (input % 2 == 0) {
+					E++;
+				} else if (input % 2 == 1){
+					O++;
+				}
+			} else if (input < 0) {
+				N++;
+				if (input % 2 == 0) {
+					E++;
+				} else if (input % 2 == 1){
+					O++;
+				} else if (input % 2 < 0) {
+					O++;
+				}
+			}
+			System.out.println("P - " + P + ", N - " + N + ", O - " + O + ", E - " + E);
+		}
+	}
+
+}
