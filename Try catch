@@ -1,0 +1,22 @@
+package another;
+
+import java.util.Scanner;
+
+public class P14 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String a = sc.next();
+//		String b = sc.next();
+		
+		//if의 else, switch의 default 역할을 하는 try catch 구문
+		try {
+			double doubleA = Double.parseDouble(a);
+			System.out.println(doubleA);
+		} catch (Exception e) {
+			System.out.println("Error");
+		}
+	}
+
+}
